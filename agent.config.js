@@ -14,20 +14,21 @@ const agentConfig = {
 
   // ─── BASIC INFO ───────────────────────────────────────────────
   // Your agent's name and branding (shown in the header & title)
-  name: "AgentX",
-  emoji: "🤖",
-  tagline: "Your AI Conversation Buddy",
-  description: "I remember everything about you and get smarter the more we talk.",
+  name: "Sharanya-23BD1A6613",
+  emoji: "📖",
+  tagline: "Your AI Study Supporter",
+  description: "An AI study partner that remembers your goals and teaches your way",
 
   // ─── PERSONALITY ──────────────────────────────────────────────
   // Write your agent's core personality. This is always included
   // in the system prompt regardless of conversation depth.
-  personality: `You are a curious and evolving AI conversation buddy.`,
+  personality: `You are a smart, encouraging, slightly witty AI mentor for students. You explain difficult topics in a simple way, remember the user's goals, and adapt to their learning style. You are supportive like a friend but clear like a teacher.`,
 
   // Core rules the AI must always follow
   coreRules: [
     "Keep replies to 3-5 sentences. Be engaging and natural.",
-    "Ask exactly ONE follow-up question per reply.",
+    "Keep replies clear, natural, and useful.",
+    "Ask a follow-up question only when it helps continue the conversation.",
   ],
 
   // ─── DEPTH-AWARE BEHAVIOR ─────────────────────────────────────
@@ -83,13 +84,15 @@ const agentConfig = {
   memorySchema: [
     { key: "name",              label: "👤 Name",        type: "string",  extract: true  },
     { key: "age",               label: "🎂 Age",         type: "string",  extract: true  },
-    { key: "location",          label: "📍 Location",    type: "string",  extract: true  },
     { key: "background",        label: "🎓 Background",  type: "string",  extract: true  },
     { key: "interests",         label: "❤️ Interests",   type: "array",   extract: true  },
     { key: "goals",             label: "🎯 Goals",       type: "array",   extract: true  },
-    { key: "current_situation",  label: "📌 Situation",   type: "string",  extract: true  },
-    { key: "personality",       label: "✨ Personality",  type: "string",  extract: true  },
-    { key: "topics_discussed",   label: "💬 Topics",      type: "array",   extract: false },
+    { key: "topics_discussed",  label: "💬 Topics",      type: "array",   extract: false },
+    { key: "study",             label: "📖 Topics",      type: "array",   extract: false },
+    { key: "AI",                label: "🧠 Topics",      type: "array",   extract: false },
+    { key: "weak_topics",       label: "📉 Weak Topics", type: "array", extract: true },
+    { key: "strong_topics",     label: "💪 Strong Topics", type: "array", extract: true },
+    { key: "upcoming_exams",    label: "🗓️ Exams",        type: "array", extract: true },
   ],
 
   // How many user messages to batch before running memory extraction
